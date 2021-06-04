@@ -52,23 +52,3 @@ class Bag:
 
     def minus_amount(self, amount):
         self.amount -= amount
-
-
-if __name__ == "__main__":
-    a = Bag(10000)
-    a.invitation = Invitation()
-    a.ticket = Ticket()
-
-    print(a.__dict__)
-    print(a.invitation is not None)
-    print(a.ticket is not None)
-
-    # TODO
-    #   이걸 막으려면?
-    # a.asdf = 1234
-
-    b = Bag(10000, Invitation(), Ticket())
-
-    print(b.__dict__)
-    print(b.invitation is not None)
-    print(b.ticket is not None)

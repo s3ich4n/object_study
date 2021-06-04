@@ -8,6 +8,8 @@
 
 from typing import Optional
 
+import datetime
+
 
 class Invitation:
     """ 초대장을 구현한 객체
@@ -15,6 +17,6 @@ class Invitation:
     """
     def __init__(
             self,
-            when: Optional[int] = None
+            when: Optional[datetime.datetime] = None
     ):
         self._when = when

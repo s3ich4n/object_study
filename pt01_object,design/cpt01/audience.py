@@ -23,8 +23,3 @@ class Audience:
     @property
     def bag(self):
         return self._bag
-
-
-if __name__ == "__main__":
-    a = Audience(Bag(10000))
-    print(a.bag)

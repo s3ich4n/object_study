@@ -7,10 +7,8 @@
 
 
 from audience import Audience
-from bag import Bag
-from ticket import Ticket
+
 from ticket_seller import TicketSeller
-from ticket_office import TicketOffice
 
 
 class Theatre:
@@ -51,27 +49,3 @@ class Theatre:
             audience.bag.minus_amount(ticket.fee)
             self.ticket_seller.ticket_office.plus_amount(ticket.fee)
             audience.bag.ticket = ticket
-
-
-if __name__ == '__main__':
-    new_audience = Audience(Bag(10000))
-
-    theatre = Theatre(
-        TicketSeller(
-            TicketOffice(
-                100000,
-                [Ticket(1000), Ticket(1000)]
-            )
-        )
-    )
-
-    print("판매 전 상황")
-    print(f"극장의 경우: {theatre.ticket_seller.ticket_office.__dict__}")
-    print(f"관객의 경우: {new_audience.bag.__dict__}")
-
-    print("")
-    theatre.enter(new_audience)
-
-    print("판매 후 상황")
-    print(f"극장의 경우: {theatre.ticket_seller.ticket_office.__dict__}")
-    print(f"관객의 경우: {new_audience.bag.__dict__}")
