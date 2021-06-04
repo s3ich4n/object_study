@@ -45,7 +45,7 @@ class Theatre:
             ticket = self.ticket_seller.ticket_office.ticket
             audience.bag.ticket = ticket
         else:
-            ticket = self._ticket_seller.ticket_office.ticket
+            ticket = self.ticket_seller.ticket_office.ticket
             audience.bag.minus_amount(ticket.fee)
             self.ticket_seller.ticket_office.plus_amount(ticket.fee)
             audience.bag.ticket = ticket
